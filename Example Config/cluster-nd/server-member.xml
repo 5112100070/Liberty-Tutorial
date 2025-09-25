@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="Member 1">
+
+    <!-- Enable features -->
+    <featureManager>
+        <feature>webProfile-8.0</feature>
+        <feature>restConnector-2.0</feature>
+        <feature>collectiveMember-1.0</feature>
+        <feature>monitor-1.0</feature>
+    </featureManager>
+
+    <variable name="defaultHostName" value="liberty-member-1.local"/>
+    <collectiveMember controllerHost="liberty-controller.local" controllerPort="9443"/>
+
+    <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
+    <httpEndpoint id="defaultHttpEndpoint" host="*"
+                  httpPort="9080"
+                  httpsPort="9443" />
+
+    <keyStore id="defaultKeyStore"  location="${server.config.dir}/resources/security/key.p12"
+            type="PKCS12" password="liberty123"/>
+    <keyStore id="defaultTrustStore" location="${server.config.dir}/resources/security/trust.p12"
+            type="PKCS12" password="liberty123"/>
+    <!-- server identity keystore -->
+    <keyStore id="serverIdentity" password="{xor}MzY9Oi0rJm5tbA=="
+              location="${server.config.dir}/resources/collective/serverIdentity.p12" />
+
+    <!-- collective truststore -->
+    <keyStore id="collectiveTrust" password="{xor}MzY9Oi0rJm5tbA=="
+              location="${server.config.dir}/resources/collective/collectiveTrust.p12" />
+
+    <ssl id="defaultSSLConfig" keyStoreRef="defaultKeyStore" trustStoreRef="defaultTrustStore"/>
+    <sslDefault sslRef="defaultSSLConfig"/>
+
+    <application id="account-service-1" name="Account Service Backend (internal)" type="war" context-root="/accounts" location="account-service.war"/>
+    <application id="account-service-2" name="Account Service Backend (external)" type="war" context-root="/accounts-external" location="account-service.war" />
+</server>

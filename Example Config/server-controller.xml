@@ -1,0 +1,23 @@
+<server description="Liberty ND Controller with Admin Center">
+    <featureManager>
+        <feature>collectiveController-1.0</feature>
+        <feature>adminCenter-1.0</feature>
+        <feature>appSecurity-3.0</feature>
+        <feature>restConnector-2.0</feature>
+    </featureManager>
+
+    <basicRegistry id="basic" realm="adminRealm">
+        <user name="admin" password="rahasia123"/>
+        <group name="admins">
+            <member name="admin"/>
+        </group>
+    </basicRegistry>
+
+    <administrator-role>
+        <user>admin</user>
+    </administrator-role>
+
+    <include location="${server.config.dir}/controller-collective.xml" />
+
+    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443"/>
+</server>
