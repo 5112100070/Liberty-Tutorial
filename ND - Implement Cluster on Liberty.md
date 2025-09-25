@@ -140,7 +140,7 @@ Run this command on **member server**.
   --password="$KEY_PASS" \
   --validity=825 \
   --subject="CN=$MEM1_HOST,O=MyOrg,C=ID" \
-  --extInfo "san=dns:$MEM1_HOST,ip:$MEM1_IP,dns:localhost,ip:127.0.0.1"
+  --extInfo="san=dns:$MEM1_HOST,ip:$MEM1_IP,dns:localhost,ip:127.0.0.1"
 ```
 ![Member certificate](images/liberty-nd-member-create-certificate.png)
 - Edit server.xml for member
