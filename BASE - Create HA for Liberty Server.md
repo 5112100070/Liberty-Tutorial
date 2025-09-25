@@ -10,6 +10,7 @@ For example load balancer configuration, you can refer to [upstream](Example%20C
 
 ## Load Test HA Architecture
 In this section, we will perform load testing on the Liberty architecture described above. We will design the load test injector architecture as shown in the image below.
+
 ![injector-architecture](images/injector-architecture.drawio.png)
 
 What we need to prepare:

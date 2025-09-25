@@ -8,9 +8,13 @@
 ```
 java -jar wlp-nd-license.jar
 ```
+
 Before
+
 ![Liberty Base](images/liberty-version-base.png)
+
 After
+
 ![Liberty ND](images/liberty-version-nd.png)
 
 ## Flow To Setup

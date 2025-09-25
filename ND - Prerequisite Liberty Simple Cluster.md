@@ -4,6 +4,7 @@ Imagine you want to create a simple cluster. There are several key points you ne
 
 ### Design Cluster
 ![Liberty Cluster ND Design](images/cluster-liberty-design.png)
+
 Ensure two-way name resolution:
 - The controller must be able to resolve the members.
 - The members must be able to resolve the controller.

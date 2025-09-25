@@ -8,6 +8,7 @@ Liberty supports clustering, which is primarily used to manage multiple Liberty 
 
 ### 1. Simple Architecture Cluster Liberty
 ![Liberty Cluster ND Design](images/cluster-liberty-design.png)
+
 you need to pay attention on [Prerequisite](ND%20-%20Prerequisite%20Liberty%20Simple%20Cluster.md)
 
 ### 2. Setup Parameter (Optional)
@@ -128,7 +129,7 @@ you can find my example [server.xml](Example%20Config/cluster-nd/server.xml) and
 ![Login Page](images/liberty-nd-cluster-login.png)
 ![Dashboard Page](images/liberty-nd-cluster-dashboard.png)
 
-### 5. Create and Assing MEMBER
+### 5. Create and Assign MEMBER
 Run this command on **member server**.
 - Create server and generate its certificate
 ```
